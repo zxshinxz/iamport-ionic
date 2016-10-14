@@ -43,11 +43,6 @@ var inAppBrowserRef;
 
         var pg = param.pg;
 
-        if (pg == 'kakao') {
-          if (ionic.Platform.isAndroid())
-            navigator.app.exitApp();
-        }
-
         inAppBrowserRef.addEventListener('loadstart', function (event) {
           if ((event.url).indexOf(m_redirect_url) === 0) { //결제 끝.
             var query = (event.url).substring(m_redirect_url.length + 1); // m_redirect_url+? 뒤부터 자름
